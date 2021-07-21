@@ -39,11 +39,11 @@
   width: 750px;
 }
 
-.Personal-info-header{
+.form-header{
   text-align:center;
   width: auto;
 }
-.Personal-info-container{
+.input-container{
   display: flex;
   flex-wrap: wrap;
 }

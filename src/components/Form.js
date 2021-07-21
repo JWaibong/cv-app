@@ -1,5 +1,6 @@
 import React, {useReducer, useEffect} from 'react';
 import Info from './Info';
+import ExperienceContainer from './ExperienceContainer';
 import Experience from './Experience';
 
 
@@ -12,7 +13,9 @@ function Form() {
         <form>
             <Info />
             <h1 className="form-header"> Experience </h1>
-            <Experience />
+            <ExperienceContainer>
+
+            </ExperienceContainer>
 
 
 
