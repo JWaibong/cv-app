@@ -1,4 +1,5 @@
-import React, {useEffect, useReducer} from 'react'
+import React, { useContext, useReducer} from 'react'
+import { SubmitContext } from './Form';
 
 const initialState = {
     firstName: '',
@@ -30,6 +31,7 @@ const reducer = (currentState, action) => {
             return currentState;
     }
 }
+let sent = false;
 function Info() {
       const [personalInfo, dispatchPersonalInfo] = useReducer(reducer, initialState)
       const {firstName, lastName, title, address, phoneNumber, email, description } = personalInfo;
@@ -37,8 +39,12 @@ function Info() {
       /*useEffect( ()=> {
           console.log(personalInfo);
       }, [personalInfo])*/
+      const [submitted, giveToParent] = useContext(SubmitContext);
 
-      
+      if(submitted && !sent){
+          giveToParent([personalInfo]);
+          sent = true;
+      };
     
 
     return (
