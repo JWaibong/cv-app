@@ -11,20 +11,17 @@ export const SubmitContext2 = React.createContext();
 
 function Form() {
     const [submitted, setSubmitted]= useState(false);
-    let info = [];
+    let info = [null,null,null];
 
     const submitHandler = (e) => {
         e.preventDefault();
         setSubmitted(true);
     }
 
-    const giveToParent = (array) => {
+    const giveToParent = (array) => {       
         info.push(array);
+        info.shift();
     }
-    /*let cvInfo = [null,null,null]; 
-    const giveToCV = (info) => {
-      cvInfo = info;
-    } */
 
 
 
