@@ -2,11 +2,11 @@ import React,{useState} from 'react';
 import Info from './Info';
 import ExperienceContainer from './ExperienceContainer';
 import EducationContainer from './EducationContainer';
+import GenerateCV from './GenerateCV';
 
 export const SubmitContext = React.createContext();
 
 export const SubmitContext2 = React.createContext();
-
 
 
 function Form() {
@@ -20,14 +20,16 @@ function Form() {
 
     const giveToParent = (array) => {
         info.push(array);
-        if(info.length === 3){
-            console.log(info)
-        }
     }
+    /*let cvInfo = [null,null,null]; 
+    const giveToCV = (info) => {
+      cvInfo = info;
+    } */
 
 
 
     return (
+    <React.Fragment>
         <form onSubmit={(e) => submitHandler(e)}>
             <SubmitContext.Provider value={[submitted,giveToParent]}>
                 <Info />
@@ -43,11 +45,11 @@ function Form() {
             </SubmitContext2.Provider>
 
             <button type="submit"> Submit</button>
-
-
-
-
         </form>
+            <GenerateCV value={info}/>
+
+    </React.Fragment>
+
     )
 }
 export default Form

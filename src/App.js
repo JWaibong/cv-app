@@ -2,7 +2,11 @@ import React from 'react';
 import Form from './components/Form';
 import './App.css';
 
+export const CVContext = React.createContext();
+
 function App() {
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,12 +18,9 @@ function App() {
         <Form />
         
         </div>
-
-
-
-
-
       </div>
+
+
     </div>
   );
 }

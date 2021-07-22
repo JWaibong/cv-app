@@ -42,7 +42,7 @@ function Info() {
       const [submitted, giveToParent] = useContext(SubmitContext);
 
       if(submitted && !sent){
-          giveToParent([personalInfo]);
+          giveToParent(personalInfo);
           sent = true;
       };
     
